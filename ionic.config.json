@@ -1,0 +1,8 @@
+{
+  "name": "mobile-ionic-tesis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "349ac41c"
+}
