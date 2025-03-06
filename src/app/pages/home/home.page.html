@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-title>Ultimas 20 imagenes</ion-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let imageApi of imageUrls">
+        <ion-card>
+          <img [src]="imageApi.url" [alt]="imageApi.filename" />
+          <h3 class="image-date">{{imageApi.timestamp}}</h3>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
