@@ -12,6 +12,10 @@
         <ion-card>
           <img [src]="imageApi.url" [alt]="imageApi.filename" />
           <h3 class="image-date">{{imageApi.timestamp}}</h3>
+          <ion-button expand="full" color ="danger">
+            <ion-icon slot="start" name="call"></ion-icon>
+            <a href="tel:911" class="emergency-text">LLAMAR A EMERGENCIAS</a>
+          </ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
