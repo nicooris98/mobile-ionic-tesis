@@ -9,10 +9,10 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let imageApi of imageUrls">
-        <ion-card>
+        <ion-card [color]="imageApi.personDetected ? 'danger' : 'success'">
           <img [src]="imageApi.url" [alt]="imageApi.filename" />
           <h3 class="image-date">{{imageApi.timestamp}}</h3>
-          <ion-button expand="full" color ="danger">
+          <ion-button *ngIf="imageApi.personDetected" expand="full" color ="danger">
             <ion-icon slot="start" name="call"></ion-icon>
             <a href="tel:911" class="emergency-text">LLAMAR A EMERGENCIAS</a>
           </ion-button>
