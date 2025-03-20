@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -11,6 +12,10 @@ export class AppComponent {
     { title: 'Imagenes', url: '/images', icon: 'aperture' },
     { title: 'Alerta', url: '/folder/alert', icon: 'warning' }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  public labels = ['Perfil'];
+  constructor(public authService: AuthService) {}
+
+  logout() {
+    this.authService.logout()
+  }
 }

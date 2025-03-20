@@ -1,10 +1,9 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" *ngIf="authService.isAuthenticated()">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi&#64;ionicframework.com</ion-note>
+          <ion-list-header>Menu</ion-list-header>
 
           @for (p of appPages; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
@@ -17,7 +16,7 @@
         </ion-list>
 
         <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
+          <ion-list-header>Configuración</ion-list-header>
 
           @for (label of labels; track label) {
             <ion-item lines="none">
@@ -25,6 +24,7 @@
               <ion-label>{{ label }}</ion-label>
             </ion-item>
           }
+          <ion-button (click)="logout()">Cerrar Sessión</ion-button>
         </ion-list>
       </ion-content>
     </ion-menu>

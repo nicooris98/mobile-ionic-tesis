@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageAPI } from 'src/app/models/image-api.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { ImageService } from 'src/app/services/image.service';
 import { environment } from 'src/environments/environment';
 
@@ -13,6 +14,13 @@ export class HomePage implements OnInit {
 
   imageUrls: ImageAPI[] = [];
 
+  mockImageAPI: ImageAPI = {
+    filename: "test.jpg",
+    personDetected: true,
+    timestamp: Date.now().toString(),
+    url: "src\assets\images\noperson.jpg"
+  }
+
   constructor(private imageService: ImageService) { }
 
   ngOnInit() {
@@ -22,6 +30,7 @@ export class HomePage implements OnInit {
     },
   err => {
     console.log(err)
+    this.imageUrls = [this.mockImageAPI]
   });
   }
 
