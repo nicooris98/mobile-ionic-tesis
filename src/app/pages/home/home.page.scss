@@ -1,12 +1,23 @@
+/*
 .image-date {
   margin: 0 auto;
   padding: 3px;
   font-size: small;
 }
+*/
+
+.image-date {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background-color: black;
+  color: white;
+}
 
 .emergency-text {
   color: white;
   text-decoration: none;
+  font-weight: bold;
   font-size: 0.8rem;
 }
 
