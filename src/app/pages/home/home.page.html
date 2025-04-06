@@ -6,7 +6,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-title>Ultimas 20 imagenes</ion-title>
-  <ion-button shape="round" color="danger" fill="solid">
+  <ion-button shape="round" color="danger" fill="solid" expand="block">
     <!--<ion-icon slot="start" name="call"></ion-icon>-->
     <a href="tel:911" class="emergency-text">📞 LLAMAR A EMERGENCIAS</a>
   </ion-button>
@@ -25,7 +25,7 @@
         -->
         <ion-card [color]="imageApi.personDetected ? 'danger' : 'success'">
           <img [src]="imageApi.url" [alt]="imageApi.filename" />
-          <label class="image-date">{{imageApi.timestamp}}</label>          
+          <label class="image-date">{{imageApi.timestamp}}</label>
         </ion-card>
       </ion-col>
     </ion-row>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,19 +10,36 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  username: string = '';
-  password: string = '';
-  errorMessage: string = '';
+  username: string = ''
+  password: string = ''
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private toastController: ToastController) { }
 
   ngOnInit() {
   }
 
   login() {
-    if (!this.authService.login(this.username, this.password)) {
-      this.errorMessage = 'Credenciales incorrectas';
-    }
+    this.authService.login(this.username, this.password).subscribe(async res => {
+      const toast = await this.toastController.create({
+        message: "Permiso concedido",
+        duration: 1500,
+        position: "top",
+        color: "success"
+      });
+
+      await toast.present()
+    }, async err => {
+      const toast = await this.toastController.create({
+        message: err.error.error ?? "Error al iniciar sesión",
+        duration: 1500,
+        position: "top",
+        color: "danger"
+      });
+
+      await toast.present()
+    })
+    this.username = ""
+    this.password = ""
   }
 
 }

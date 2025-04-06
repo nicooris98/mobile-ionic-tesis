@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay" *ngIf="authService.isAuthenticated()">
+    <ion-menu contentId="main-content" type="overlay" *ngIf="authService.getToken()">
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>Menu</ion-list-header>
@@ -24,7 +24,7 @@
               <ion-label>{{ label }}</ion-label>
             </ion-item>
           }
-          <ion-button (click)="logout()">Cerrar Sessión</ion-button>
+          <ion-button (click)="logout()" expand="block">Cerrar Sessión</ion-button>
         </ion-list>
       </ion-content>
     </ion-menu>

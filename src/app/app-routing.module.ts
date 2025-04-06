@@ -18,10 +18,6 @@ const routes: Routes = [
     redirectTo: 'home', // Redirige a la página principal
     pathMatch: 'full'
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  }
 
 ];
 
