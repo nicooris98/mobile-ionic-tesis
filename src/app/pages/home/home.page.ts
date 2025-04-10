@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageAPI } from 'src/app/models/image-api.model';
-import { AuthService } from 'src/app/services/auth.service';
 import { ImageService } from 'src/app/services/image.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
