@@ -9,8 +9,8 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Imagenes', url: '/images', icon: 'aperture' },
-    { title: 'Alerta', url: '/folder/alert', icon: 'warning' }
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Fotos', url: '/photos', icon: 'images' }
   ];
   public labels = ['Perfil'];
   constructor(public authService: AuthService) {}

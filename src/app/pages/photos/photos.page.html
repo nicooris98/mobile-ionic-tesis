@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Fotos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <btn-emergency></btn-emergency>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let image of photoList.images">
+        <div [ngClass]="{'person-detected': image.personDetected, 'no-person': !image.personDetected}">
+          <img [src]="image.url" class="image-preview" />
+          <label class="image-date">{{image.timestamp}}</label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-footer class="ion-padding ion-text-center">
+    <ion-button (click)="prevPage()" [disabled]="photoList.page === 1">Anterior</ion-button>
+    <ion-button (click)="nextPage()">Siguiente</ion-button>
+  </ion-footer>
+</ion-content>
