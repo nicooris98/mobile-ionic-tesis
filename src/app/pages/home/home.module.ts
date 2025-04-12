@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page'
+import { BtnEmergencyComponent } from 'src/app/settings/components/btn-emergency/btn-emergency.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    BtnEmergencyComponent
   ],
   declarations: [HomePage]
 })

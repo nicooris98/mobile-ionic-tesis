@@ -6,10 +6,10 @@
 
 <ion-content [fullscreen]="true">
   <ion-title>Ultimas 20 fotos</ion-title>
-  <ion-button shape="round" color="danger" fill="solid" expand="block">
-    <!--<ion-icon slot="start" name="call"></ion-icon>-->
+  <!--<ion-button shape="round" color="danger" fill="solid" expand="block">
     <a href="tel:911" class="emergency-text">📞 LLAMAR A EMERGENCIAS</a>
-  </ion-button>
+  </ion-button>-->
+  <btn-emergency></btn-emergency>
   <div class="spinner-container">
     <ion-spinner *ngIf="imageUrls.length == 0"></ion-spinner>
   </div>
