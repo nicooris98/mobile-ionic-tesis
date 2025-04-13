@@ -16,7 +16,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let imageApi of imageUrls">
-        <ion-card class="foto-card" [color]="imageApi.personDetected ? 'danger' : 'success'"><!-- [color]="imageApi.personDetected ? 'danger' : 'success'" -->
+        <ion-card class="photo-card" [color]="imageApi.personDetected ? 'danger' : 'success'"><!-- [color]="imageApi.personDetected ? 'danger' : 'success'" -->
           <img [src]="imageApi.url" [alt]="imageApi.filename"/>
           <div class="overlay">
             <ion-icon name="time-outline"></ion-icon>
