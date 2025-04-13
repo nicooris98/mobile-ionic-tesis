@@ -1,18 +1,11 @@
 /*
 .image-date {
-  margin: 0 auto;
-  padding: 3px;
-  font-size: small;
-}
-*/
-
-.image-date {
   position: absolute;
   bottom: 3px;
   right: 0px;
   background-color: black;
   color: white;
-}
+}*/
 
 .emergency-text {
   color: white;
@@ -30,4 +23,31 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// Segun chat-gpt:
+.foto-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 5px;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+
+    ion-icon {
+      position: relative;
+      right: -4px;
+    }
+  }
 }
