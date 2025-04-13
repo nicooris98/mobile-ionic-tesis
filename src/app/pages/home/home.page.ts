@@ -31,5 +31,10 @@ export class HomePage implements OnInit {
     this.imageUrls = [this.mockImageAPI]
   });
   }
+  
+  formatTimestamp(timestamp: string): string {
+    const date = new Date(timestamp);
+    return date.toLocaleString(); // Formato local automático
+  }
 
 }

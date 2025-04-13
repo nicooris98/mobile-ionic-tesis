@@ -4,15 +4,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <btn-emergency></btn-emergency>
+  <div class="spinner-container">
+    <ion-spinner *ngIf="photoList.images.length == 0"></ion-spinner>
+  </div>
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let image of photoList.images">
-        <div [ngClass]="{'person-detected': image.personDetected, 'no-person': !image.personDetected}">
-          <img [src]="image.url" class="image-preview" />
-          <div class="timestamp">{{ formatTimestamp(image.timestamp) }}</div>
-        </div>
+      <ion-col size="6" *ngFor="let imageApi of photoList.images">
+        <ion-card class="photo-card" [color]="imageApi.personDetected ? 'danger' : 'success'">
+          <!--<div [ngClass]="{'person-detected': imageApi.personDetected, 'no-person': !imageApi.personDetected}">-->
+            <img [src]="imageApi.url" [alt]="imageApi.filename"/>
+            <div class="overlay">
+              <ion-icon name="time-outline"></ion-icon>
+              {{formatTimestamp(imageApi.timestamp)}}
+            </div>
+          <!--</div>-->
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
