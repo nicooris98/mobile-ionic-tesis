@@ -23,19 +23,24 @@ export class AppComponent{
     this.socket.connect()
 
     this.socket.fromEvent('message').subscribe(async(message) => {
-      console.log("websocket", message)
+      this.playAlarmSound()
       const toast = await this.toastController.create({
         message: "¡Persona Detectada!",
         duration: 1500,
         position: "top",
         color: "danger"
       })
-
       await toast.present()
     })
   }
 
   logout() {
     this.authService.logout()
+  }
+
+  // Función para reproducir el sonido
+  playAlarmSound() {
+    const audio = new Audio('assets/sounds/noti.mp3');
+    audio.play();
   }
 }
