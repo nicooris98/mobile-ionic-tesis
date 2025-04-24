@@ -4,23 +4,24 @@ import { ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
   standalone: false
 })
-export class LoginPage implements OnInit {
+export class RegisterPage implements OnInit {
 
   username: string = ''
   password: string = ''
+  passwordRep: string = ''
 
   constructor(private authService: AuthService, private toastController: ToastController, private router: Router) { }
 
   ngOnInit() {
   }
 
-  login() {
-    this.authService.login(this.username, this.password).subscribe(async res => {
+  register() {
+    this.authService.register(this.username, this.password, this.passwordRep).subscribe(async res => {
       const toast = await this.toastController.create({
         message: "Permiso concedido",
         duration: 1500,
@@ -41,10 +42,11 @@ export class LoginPage implements OnInit {
     })
     this.username = ""
     this.password = ""
+    this.passwordRep = ""
   }
 
-  goToRegister() {
-    this.router.navigate(["/register"])
+  goToLogin() {
+    this.router.navigate(["/login"])
   }
 
 }

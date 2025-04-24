@@ -15,6 +15,17 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  register(username: string, password: string, passwordRep: string): Observable<Boolean> {
+    const credentials = { username, password, passwordRep }
+    return this.http.post(`${this.baseUrl}/auth/register`, credentials).pipe(
+      tap((response: any) => {
+        if (response.message == "Usuario registrado exitosamente") {
+          this.router.navigate(["/login"])
+        }
+      })
+    )
+  }
+
   login(username: string, password: string): Observable<Boolean> {
     const credentials = { username, password }
     return this.http.post(`${this.baseUrl}/auth/login`, credentials).pipe(
