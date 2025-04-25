@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page'
 import { BtnEmergencyComponent } from 'src/app/settings/components/btn-emergency/btn-emergency.component';
+import { ImageModalComponent } from 'src/app/settings/components/image-modal/image-modal.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { BtnEmergencyComponent } from 'src/app/settings/components/btn-emergency
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    BtnEmergencyComponent
+    BtnEmergencyComponent,
+    ImageModalComponent
   ],
   declarations: [HomePage]
 })

@@ -17,7 +17,7 @@
     <ion-row>
       <ion-col size="6" *ngFor="let imageApi of imageUrls">
         <ion-card class="photo-card" [color]="imageApi.personDetected ? 'danger' : 'success'"><!-- [color]="imageApi.personDetected ? 'danger' : 'success'" -->
-          <img [src]="imageApi.url" [alt]="imageApi.filename"/>
+          <img [src]="imageApi.url" [alt]="imageApi.filename" (click)="openModal(imageApi.url, imageApi.personDetected)"/>
           <div class="overlay">
             <ion-icon name="time-outline"></ion-icon>
             <!--<label class="image-date">🕑 {{imageApi.timestamp}}</label>-->

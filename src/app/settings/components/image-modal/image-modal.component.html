@@ -1,0 +1,7 @@
+<ion-content>
+  <ion-img [src]="imageUrl"></ion-img>
+  <div [class]="isDetected ? 'detected' : 'not-detected'">
+    {{ isDetected ? 'Persona detectada' : 'No detectada' }}
+  </div>
+  <ion-button expand="block" (click)="dismissModal()">Cerrar</ion-button>
+</ion-content>
